@@ -9,9 +9,9 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
-class SiteViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+class SiteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     @SuppressLint("SetTextI18n")
-    fun onBind(site: UnionType.Site){
+    fun onBind(site: UnionType.Site) {
         val name = itemView.findViewById<TextView>(R.id.name)
         val image = itemView.findViewById<ImageView>(R.id.image)
         val link = itemView.findViewById<TextView>(R.id.link)
@@ -20,7 +20,7 @@ class SiteViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         image.setImageDrawable(ContextCompat.getDrawable(itemView.context, site.image))
         link.text = "Link: ${site.link}"
 
-        link.setOnClickListener{
+        link.setOnClickListener {
             val address = Uri.parse(site.link)
             val openLinkIntent = Intent(Intent.ACTION_VIEW, address)
             link.context.startActivity(openLinkIntent)

@@ -20,7 +20,8 @@ class SiteCategoryAdapter(private val list: List<UnionType>) :
             }
             CATEGORY_TYPE -> {
                 val view =
-                    LayoutInflater.from(parent.context).inflate(R.layout.category_layout, parent, false)
+                    LayoutInflater.from(parent.context)
+                        .inflate(R.layout.category_layout, parent, false)
                 CategoryViewHolder(view)
             }
             else -> throw Exception()
